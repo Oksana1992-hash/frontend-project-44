@@ -10,10 +10,10 @@ const isEvenNumberGame = () => {
 
   const isEvenNumber = (num) => num % 2 === 0;
 
-  let rightAnswercount = 0;
-  const geheralQuestion = 3;
+  let rightAnswerCount = 0;
+  const generalQuestion = 3;
 
-  while (rightAnswercount < geheralQuestion) {
+  while (rightAnswerCount < generalQuestion) {
     const num = getRandomNumber(1, 100);
     const userAnswer = readlineSync.question(`Question: ${num}\nYour answer: `);
 
@@ -21,7 +21,7 @@ const isEvenNumberGame = () => {
 
     if (expectedAnswer === userAnswer) {
       console.log('Correct!');
-      rightAnswercount += 1;
+      rightAnswerCount += 1;
     } else {
       console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${expectedAnswer}".\nLet's try again, ${name}!`);
       return;
