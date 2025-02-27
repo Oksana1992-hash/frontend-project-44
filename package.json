@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "type": "module",
   "description": "",
-  "main": "src/cli.js",
+  "main": "src/even.js",
   "bin": {
-    "brain-games": "bin/brain-games.js"
+    "brain-games": "bin/brain-games.js",
+    "brain-even": "bin/brain-even.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
