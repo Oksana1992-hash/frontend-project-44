@@ -3,4 +3,4 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/4c844a72ebce269563cd/maintainability)](https://codeclimate.com/github/Oksana1992-hash/frontend-project-44/maintainability)
 
-Demostration project brain-game: https://asciinema.org/a/DPOf8biGspPxbDy2EVxDr5KCB
+[![asciicast](https://asciinema.org/a/DPOf8biGspPxbDy2EVxDr5KCB.svg)](https://asciinema.org/a/DPOf8biGspPxbDy2EVxDr5KCB)
