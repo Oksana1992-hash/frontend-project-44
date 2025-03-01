@@ -8,3 +8,5 @@
 Demonstration project brain-even: https://asciinema.org/a/DPOf8biGspPxbDy2EVxDr5KCB
 
 Demonstration project brain-calc: https://asciinema.org/a/VwVO1XKYxEXwzOP23THypva6M
+
+Demonstration project brain-gcd: https://asciinema.org/a/Thdm0pYb4luwUVpSogu1cwK9Z
