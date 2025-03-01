@@ -1,57 +1,41 @@
-import readlineSync from 'readline-sync';
-
-const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+import startOfGames from '../index.js';
+import getRandomNumber from '../getRandomNumber.js';
 
 const getRandomOperation = () => {
-    const operations = ['+', '-', '*'];
-    const randomIndex = getRandomNumber(0, operations.length - 1);
-    return operations[randomIndex];
+  const operations = ['+', '-', '*'];
+  const randomIndex = getRandomNumber(0, operations.length - 1);
+  return operations[randomIndex];
 };
 
-const calculateGame = () => {
-    console.log('Welcome to the Brain Games!');
-    const name = readlineSync.question('May I have your name? ');
-    console.log(`Hello, ${name}!`);
-    console.log('What is the result of the expression?');
-  
-    let rightAnswerCount = 0;
-    const generalQuestion = 3;
-  
-    while (rightAnswerCount < generalQuestion) {
-        const num1 = getRandomNumber(1, 100);
-        const num2 = getRandomNumber(1, 100);
-        const operation = getRandomOperation();
+const rulesOfGame = 'What is the result of the expression?';
 
-        let question;
-        let expectedAnswer;
+const gameQuestionAnswer = () => {
+  const num1 = getRandomNumber(1, 100);
+  const num2 = getRandomNumber(1, 100);
+  const operation = getRandomOperation();
+  let question;
+  let expectedAnswer;
 
-        switch (operation) {
-            case '+':
-                question = `${num1} + ${num2}`;
-                expectedAnswer = num1 + num2;
-                break;
-            case '-':
-                question = `${num1} - ${num2}`;
-                expectedAnswer = num1 - num2;
-                break;
-            case '*':
-                question = `${num1} * ${num2}`;
-                expectedAnswer = num1 * num2;
-                break;
-        }
+  switch (operation) {
+    case '+':
+      question = `${num1} + ${num2}`;
+      expectedAnswer = num1 + num2;
+      break;
+    case '-':
+      question = `${num1} - ${num2}`;
+      expectedAnswer = num1 - num2;
+      break;
+    case '*':
+      question = `${num1} * ${num2}`;
+      expectedAnswer = num1 * num2;
+      break;
+    default:
+      throw new Error('Invalid operation');
+  }
 
-        const userAnswer = readlineSync.question(`Question: ${question}\nYour answer: `);
+  return [question, String(expectedAnswer)];
+};
 
-        if (Number(userAnswer) === expectedAnswer) {
-            console.log('Correct!');
-            rightAnswerCount += 1;
-        } else {
-            console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${expectedAnswer}".\nLet's try again, ${name}!`);
-            return;
-      }
-    }
-  
-    console.log(`Congratulations, ${name}!`);
-  };
-  
-  export default calculateGame;
+const calculateGame = () => startOfGames(rulesOfGame, gameQuestionAnswer);
+
+export default calculateGame;
