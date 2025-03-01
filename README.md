@@ -6,3 +6,5 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/4c844a72ebce269563cd/test_coverage)](https://codeclimate.com/github/Oksana1992-hash/frontend-project-44/test_coverage)
 
 Demonstration project brain-even: https://asciinema.org/a/DPOf8biGspPxbDy2EVxDr5KCB
+
+Demonstration project brain-calc: https://asciinema.org/a/VwVO1XKYxEXwzOP23THypva6M
