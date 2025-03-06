@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "type": "module",
-  "description": "",
+  "description": "This is project a set of five console games for brain training. Each game asks questions that need to be answered correctly.",
   "main": "index.js",
   "bin": {
     "brain-games": "bin/brain-games.js",
