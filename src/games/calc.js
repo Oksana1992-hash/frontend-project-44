@@ -1,4 +1,4 @@
-import startOfGames from '../index.js';
+import startGames from '../index.js';
 import getRandomNumber from '../getRandomNumber.js';
 
 const getRandomOperation = () => {
@@ -7,35 +7,37 @@ const getRandomOperation = () => {
   return operations[randomIndex];
 };
 
-const rulesOfGame = 'What is the result of the expression?';
+const gameRules = 'What is the result of the expression?';
 
-const gameQuestionAnswer = () => {
-  const num1 = getRandomNumber(1, 100);
-  const num2 = getRandomNumber(1, 100);
-  const operation = getRandomOperation();
+const calculate = (number1, number2, operation) => {
   let question;
   let expectedAnswer;
-
   switch (operation) {
     case '+':
-      question = `${num1} + ${num2}`;
-      expectedAnswer = num1 + num2;
+      question = `${number1} + ${number2}`;
+      expectedAnswer = number1 + number2;
       break;
     case '-':
-      question = `${num1} - ${num2}`;
-      expectedAnswer = num1 - num2;
+      question = `${number1} - ${number2}`;
+      expectedAnswer = number1 - number2;
       break;
     case '*':
-      question = `${num1} * ${num2}`;
-      expectedAnswer = num1 * num2;
+      question = `${number1} * ${number2}`;
+      expectedAnswer = number1 * number2;
       break;
     default:
       throw new Error('Invalid operation');
   }
-
   return [question, String(expectedAnswer)];
 };
 
-const calculateGame = () => startOfGames(rulesOfGame, gameQuestionAnswer);
+const generateQuestionAnswer = () => {
+  const randomNumber1 = getRandomNumber();
+  const randomNumber2 = getRandomNumber();
+  const operation = getRandomOperation();
+  return calculate(randomNumber1, randomNumber2, operation);
+};
 
-export default calculateGame;
+const startCalculationGame = () => startGames(gameRules, generateQuestionAnswer);
+
+export default startCalculationGame;

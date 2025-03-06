@@ -1,16 +1,16 @@
-import startOfGames from '../index.js';
+import startGames from '../index.js';
 import getRandomNumber from '../getRandomNumber.js';
 
-const rulesOfGame = 'Answer "yes" if the number is even, otherwise answer "no".';
+const gameRules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const isEvenNumber = (num) => num % 2 === 0;
+const checkIfEven = (number) => number % 2 === 0;
 
-const gameQuestionAnswer = () => {
-  const num = getRandomNumber(1, 100);
-  const expectedAnswer = isEvenNumber(num) ? 'yes' : 'no';
-  return [num, expectedAnswer];
+const generateQuestionAnswer = () => {
+  const randomNumber = getRandomNumber();
+  const expectedAnswer = checkIfEven(randomNumber) ? 'yes' : 'no';
+  return [randomNumber, expectedAnswer];
 };
 
-const evenGame = () => startOfGames(rulesOfGame, gameQuestionAnswer);
+const startEvenGame = () => startGames(gameRules, generateQuestionAnswer);
 
-export default evenGame;
+export default startEvenGame;
