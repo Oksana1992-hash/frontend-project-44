@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import generalDivisorGame from '../src/games/gcd.js';
+import startDivisorGame from '../src/games/gcd.js';
 
-generalDivisorGame();
+startDivisorGame();
