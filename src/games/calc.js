@@ -10,32 +10,30 @@ const getRandomOperation = () => {
 const gameRules = 'What is the result of the expression?';
 
 const calculate = (number1, number2, operation) => {
-  let question;
-  let expectedAnswer;
+  let result;
   switch (operation) {
     case '+':
-      question = `${number1} + ${number2}`;
-      expectedAnswer = number1 + number2;
+      result = number1 + number2;
       break;
     case '-':
-      question = `${number1} - ${number2}`;
-      expectedAnswer = number1 - number2;
+      result = number1 - number2;
       break;
     case '*':
-      question = `${number1} * ${number2}`;
-      expectedAnswer = number1 * number2;
+      result = number1 * number2;
       break;
     default:
       throw new Error('Invalid operation');
   }
-  return [question, String(expectedAnswer)];
+  return result;
 };
 
 const generateQuestionAnswer = () => {
   const randomNumber1 = getRandomNumber();
   const randomNumber2 = getRandomNumber();
   const operation = getRandomOperation();
-  return calculate(randomNumber1, randomNumber2, operation);
+  const question = `${randomNumber1} ${operation} ${randomNumber2}`;
+  const expectedAnswer = `${calculate(randomNumber1, randomNumber2, operation)}`;
+  return [question, expectedAnswer];
 };
 
 const startCalculationGame = () => startGames(gameRules, generateQuestionAnswer);
