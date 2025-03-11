@@ -10,21 +10,16 @@ const getRandomOperation = () => {
 const gameRules = 'What is the result of the expression?';
 
 const calculate = (number1, number2, operation) => {
-  let result;
   switch (operation) {
     case '+':
-      result = number1 + number2;
-      break;
+      return number1 + number2;
     case '-':
-      result = number1 - number2;
-      break;
+      return number1 - number2;
     case '*':
-      result = number1 * number2;
-      break;
+      return number1 * number2;
     default:
       throw new Error('Invalid operation');
   }
-  return result;
 };
 
 const generateQuestionAnswer = () => {
